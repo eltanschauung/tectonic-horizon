@@ -17,6 +17,8 @@ def main():
         raise SystemExit("manifest and compatibility revision mismatch")
     manifest = {"schema": 1, "id": mixin["mod"]["id"], "version": mixin["mod"]["version"],
                 "game": "26.3", "horizon": compat["horizon_revision"], "mixins": compat["horizon_mixins_revision"]}
+    if json.loads((ROOT / "horizon-native.json").read_text()) != manifest:
+        raise SystemExit("GitHub source metadata and package manifest mismatch")
     files = {"horizon-native.json": (json.dumps(manifest, indent=2) + "\n").encode()}
     for file in sorted(bundle.iterdir()):
         if file.is_file() and file.suffix in (".rs", ".toml"):
