@@ -6,6 +6,13 @@ priority = 100
 [compatibility]
 horizon_revision = "6c2ba60a1bcfd3d4d7fe8b24abb5142483c554bc"
 
+[[injection]]
+id = "mod-menu-entry"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "menu.rs"
+bindings = [{ name = "mods", ty = "&mut Vec<NativeMod>", value = "&mut *mods" }]
+
 [[module]]
 id = "terrain"
 file = "crates/horizon-world/src/worldgen/overrides.rs"

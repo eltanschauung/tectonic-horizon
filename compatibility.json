@@ -9,6 +9,7 @@
     "crates/horizon-world/src/worldgen/biome_temperature.rs": "043b2cab0772cfb74c1d7058147da73d16ce218d687acf873cae55a67bbc4cfd",
     "crates/horizon-world/src/worldgen/structure/legacy.rs": "d87d710d6300fbed027ac0a2b452f4a49d10ea2f8418579b037c2052e9c4eb03",
     "crates/horizon-world/src/worldgen/generator.rs": "c0c71b0972aafe2b3ec12622f2c0c10c1c991ecb945ac904610ccae8cd6ddd93",
-    "crates/horizon-world/src/worldgen/generator_decoration.rs": "e9d178237ab5edb66e74d28dff53036b3133170f75d3f81e121d15724a048cd8"
+    "crates/horizon-world/src/worldgen/generator_decoration.rs": "e9d178237ab5edb66e74d28dff53036b3133170f75d3f81e121d15724a048cd8",
+    "crates/horizon-client/src/game/native_hooks.rs": "7a6bbbca594c6202ea2cf5a4608bcf846e7445ec868572bb74c1656a01d89535"
   }
 }

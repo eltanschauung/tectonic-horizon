@@ -4,10 +4,10 @@ Validated on the desktop over SSH, using the fork's Rust environment and the
 exact Horizon/mixin revisions in [compatibility.json](../compatibility.json).
 
 - Standalone Rust: formatting, Clippy with warnings denied, six unit tests and
-  doc tests.
+  doc tests, plus an integration test of native menu registration.
 - Clippy also passes with warnings denied for the actual patched
   `horizon-world` library, including the injected decoration and adapters.
-- The real mixin engine plans/applies six injections and three support modules
+- The real mixin engine plans/applies seven injections and three support modules
   against an isolated committed source export.
 - The source-only `.hnmod` is reproducible byte for byte.
 - The compiled, patched world generator loads locally prepared resources and

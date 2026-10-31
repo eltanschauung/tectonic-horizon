@@ -44,6 +44,16 @@ horizon-launcher native-build /path/to/tectonic-horizon/mixins/tectonic_horizon 
 If the instance already has native mods, install/import the bundle first and
 build the full installed set, so they remain in the selected executable.
 
+## Find the installed mod
+
+In the launcher, open **Mods** and look in the **Add a native mod from GitHub**
+section for `tectonic_horizon`. GitHub installs have their own list rather than
+the registry's Installed list. If it was installed from the command line while
+the launcher was open, restart the launcher to refresh that list.
+
+In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.1.0**.
+Restart an already running game to use the new executable.
+
 ## Configuration
 
 Defaults reproduce the settings of Tectonic 3.0.1. Optional configuration is
