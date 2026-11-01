@@ -4,7 +4,7 @@ version = "0.2.0"
 priority = 100
 
 [compatibility]
-horizon_revision = "ed0f2c6f52b6ddc62fe064abccddda5ff9a9cf26"
+horizon_revision = "ff176e563fe99f279b5ef906ad0a4259a8cff933"
 
 [[injection]]
 id = "mod-menu-entry"
