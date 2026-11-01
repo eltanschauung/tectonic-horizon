@@ -139,6 +139,14 @@ pub fn config_path() -> PathBuf {
     PathBuf::from("config/tectonic-horizon.json")
 }
 
+static ACTIVE: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(true);
+pub fn set_active(enabled: bool) {
+    ACTIVE.store(enabled, std::sync::atomic::Ordering::Relaxed);
+}
+pub fn active() -> bool {
+    ACTIVE.load(std::sync::atomic::Ordering::Relaxed)
+}
+
 pub fn config() -> &'static Config {
     static CONFIG: OnceLock<Config> = OnceLock::new();
     CONFIG.get_or_init(|| match std::fs::read_to_string(config_path()) {

@@ -85,7 +85,7 @@ pub(crate) fn decorate(
     region: &mut [ProtoChunk; 9],
 ) -> Result<(), GeneratorError> {
     let config = config();
-    if !config.general.mod_enabled
+    if !crate::worldgen::overrides::tectonic_horizon::active() || !config.general.mod_enabled
         || !config.continents.underground_rivers
         || region[4].is_decorated()
     {

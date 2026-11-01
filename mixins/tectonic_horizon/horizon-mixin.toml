@@ -1,10 +1,10 @@
 [mod]
 id = "tectonic_horizon"
-version = "0.1.0"
+version = "0.2.0"
 priority = 100
 
 [compatibility]
-horizon_revision = "6c2ba60a1bcfd3d4d7fe8b24abb5142483c554bc"
+horizon_revision = "ed0f2c6f52b6ddc62fe064abccddda5ff9a9cf26"
 
 [[injection]]
 id = "mod-menu-entry"
@@ -37,6 +37,7 @@ kind = "HEAD"
 target = "horizon_world::worldgen::overrides::WorldgenOverrides::apply"
 helper = "registries.rs"
 bindings = [
+  { name = "overrides", ty = "&WorldgenOverrides", value = "self" },
   { name = "bundle", ty = "&str", value = "bundle" },
   { name = "base", ty = "&mut BTreeMap<String, String>", value = "&mut base" },
 ]
@@ -94,3 +95,10 @@ bindings = [
   { name = "worker", ty = "&WorkerState", value = "&*worker" },
   { name = "region", ty = "&mut [ProtoChunk; 9]", value = "&mut *region" },
 ]
+
+[[injection]]
+id = "activate-world"
+kind = "HEAD"
+target = "horizon_world::worldgen::overrides::WorldgenOverrides::activate"
+helper = "activate.rs"
+bindings = [{ name = "overrides", ty = "&WorldgenOverrides", value = "self" }]
