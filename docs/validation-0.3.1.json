@@ -1,0 +1,80 @@
+{
+  "version": "0.3.1",
+  "horizon": "0409f619a6a5529c7278306a49476eafb3913e8a",
+  "horizon_mixins": "ddd9700b21997c95d95ac6ee5ecafe3830cf622a",
+  "package_sha256": "b3ce7fb49c18c81390698483fe01b04e79c9feb78b961562dc0a0211fdbc8c6d",
+  "date": "2026-11-02",
+  "checks": {
+    "package_validation": true,
+    "source_matches_package": true,
+    "byte_identical_repackage": true,
+    "isolated_upstream_fast_client_and_ctl_build": true,
+    "mixin_apply": {
+      "injections": 8,
+      "modules": 4,
+      "data": 1
+    },
+    "terrain": {
+      "default": {
+        "height": 384,
+        "max_surface": 259,
+        "min_surface": -8,
+        "other_dimensions": [
+          15252539634479308918,
+          995125875978031238
+        ],
+        "terrain": [
+          9012766028242636932,
+          12398004475917665265,
+          1502483067515248210
+        ]
+      },
+      "tall": {
+        "height": 704,
+        "max_surface": 259,
+        "min_surface": -8,
+        "other_dimensions": [
+          15252539634479308918,
+          995125875978031238
+        ],
+        "terrain": [
+          10955672767473668228,
+          14649307603964494833,
+          8021080128637574738
+        ]
+      },
+      "disabled": {
+        "height": 384,
+        "max_surface": 181,
+        "min_surface": 26,
+        "other_dimensions": [
+          15252539634479308918,
+          995125875978031238
+        ],
+        "terrain": [
+          4961278474896483960,
+          7442574190456044519,
+          12664290254380008315
+        ]
+      }
+    },
+    "rebound_controls": [
+      {
+        "tectonic": true,
+        "sneak_C": true,
+        "sneak_Ctrl": true,
+        "jump_Shift": true,
+        "sprint_X": true
+      },
+      {
+        "tectonic": false,
+        "sneak_C": true,
+        "sneak_Ctrl": true,
+        "jump_Shift": true,
+        "sprint_X": true
+      }
+    ]
+  },
+  "player_worlds_changed": false,
+  "desktop_selected_version_changed": false
+}

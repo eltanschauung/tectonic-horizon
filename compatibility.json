@@ -1,5 +1,5 @@
 {
-  "horizon_revision": "31d5f62db11cbe672de0f66f4ee417bbae0962bc",
+  "horizon_revision": "0409f619a6a5529c7278306a49476eafb3913e8a",
   "horizon_repository": "https://github.com/horizon-rust/horizon",
   "horizon_mixins_revision": "ddd9700b21997c95d95ac6ee5ecafe3830cf622a",
   "mixin_schema": 6,
@@ -10,7 +10,7 @@
     "crates/horizon-world/src/worldgen/structure/legacy.rs": "d87d710d6300fbed027ac0a2b452f4a49d10ea2f8418579b037c2052e9c4eb03",
     "crates/horizon-world/src/worldgen/generator.rs": "575b90ba55fe93c69d231d3ba0382f9f565b47d6895420fcd061804ca843ebeb",
     "crates/horizon-world/src/worldgen/generator_decoration.rs": "ec821887501e531ee9764f5746cfe524daa2543aedd494f8980e55c2811320e9",
-    "crates/horizon-client/src/game/native_hooks.rs": "d65df5887ed0a68253225d8c1a02da1a336b8af54444dc7675c563c7dca72f1d",
-    "crates/horizon-client/src/vanillagen.rs": "3f16d121ff7c9bde31df99d1fa23ceee0a93a5b6559f9f866ab13a9befb41985"
+    "crates/horizon-client/src/game/native_hooks.rs": "e1125764298ad5ff0d5dfe912e76bb22bc0fd020364040593f75662d25061a2e",
+    "crates/horizon-client/src/vanillagen.rs": "32fdc916f9fe1b0a70cc90aff6fa96a806579702a3b2421c12b65bea495a9bb1"
   }
 }

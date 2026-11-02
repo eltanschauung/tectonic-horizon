@@ -1,10 +1,10 @@
 [mod]
 id = "tectonic_horizon"
-version = "0.3.0"
+version = "0.3.1"
 priority = 100
 
 [compatibility]
-horizon_revision = "31d5f62db11cbe672de0f66f4ee417bbae0962bc"
+horizon_revision = "0409f619a6a5529c7278306a49476eafb3913e8a"
 
 [[injection]]
 id = "mod-menu-entry"
