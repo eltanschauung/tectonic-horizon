@@ -1,15 +1,16 @@
 {
-  "horizon_revision": "ff176e563fe99f279b5ef906ad0a4259a8cff933",
-  "horizon_repository": "https://github.com/eltanschauung/horizon",
-  "horizon_mixins_revision": "a2af5c0dd4117d51ecd70066ba7a00b4a2c10dab",
+  "horizon_revision": "31d5f62db11cbe672de0f66f4ee417bbae0962bc",
+  "horizon_repository": "https://github.com/horizon-rust/horizon",
+  "horizon_mixins_revision": "ddd9700b21997c95d95ac6ee5ecafe3830cf622a",
   "mixin_schema": 6,
   "source_sha256": {
-    "crates/horizon-world/src/worldgen/overrides.rs": "4ba9940cfaf1855e94a7371580fbef24ad6242038ce4d01b6f3cf4d652f6ede2",
+    "crates/horizon-world/src/worldgen/overrides.rs": "fee9bb6def5bb9b4114c5845e7eb24f4e0a94b12bc3842a2d3ecef5b62a50715",
     "crates/horizon-core/src/random/hash.rs": "0f88a127a1ba2705d3d6c0ebd009324d6ba86ffa2d27edf2d2a84765e690e4a3",
     "crates/horizon-world/src/worldgen/biome_temperature.rs": "043b2cab0772cfb74c1d7058147da73d16ce218d687acf873cae55a67bbc4cfd",
     "crates/horizon-world/src/worldgen/structure/legacy.rs": "d87d710d6300fbed027ac0a2b452f4a49d10ea2f8418579b037c2052e9c4eb03",
-    "crates/horizon-world/src/worldgen/generator.rs": "6d6563845b74e71974d710568426ac89e59e80b2450f7b65527220c3e946b5f0",
+    "crates/horizon-world/src/worldgen/generator.rs": "575b90ba55fe93c69d231d3ba0382f9f565b47d6895420fcd061804ca843ebeb",
     "crates/horizon-world/src/worldgen/generator_decoration.rs": "ec821887501e531ee9764f5746cfe524daa2543aedd494f8980e55c2811320e9",
-    "crates/horizon-client/src/game/native_hooks.rs": "1b88094111a23d169ee397fa0ee75cef92e51df0b3ff21e90d90e6a8553a14cf"
+    "crates/horizon-client/src/game/native_hooks.rs": "d65df5887ed0a68253225d8c1a02da1a336b8af54444dc7675c563c7dca72f1d",
+    "crates/horizon-client/src/vanillagen.rs": "3f16d121ff7c9bde31df99d1fa23ceee0a93a5b6559f9f866ab13a9befb41985"
   }
 }

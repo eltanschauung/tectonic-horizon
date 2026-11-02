@@ -1,10 +1,10 @@
 [mod]
 id = "tectonic_horizon"
-version = "0.2.0"
+version = "0.3.0"
 priority = 100
 
 [compatibility]
-horizon_revision = "ff176e563fe99f279b5ef906ad0a4259a8cff933"
+horizon_revision = "31d5f62db11cbe672de0f66f4ee417bbae0962bc"
 
 [[injection]]
 id = "mod-menu-entry"
@@ -23,6 +23,7 @@ source = "terrain.rs"
 id = "runtime"
 file = "crates/horizon-world/src/worldgen/overrides.rs"
 name = "tectonic_horizon"
+visibility = "pub"
 source = "runtime.rs"
 
 [[module]]
@@ -99,6 +100,13 @@ bindings = [
 [[injection]]
 id = "activate-world"
 kind = "HEAD"
-target = "horizon_world::worldgen::overrides::WorldgenOverrides::activate"
+target = "horizon_client_lib::vanillagen::shared_data_with"
 helper = "activate.rs"
-bindings = [{ name = "overrides", ty = "&WorldgenOverrides", value = "self" }]
+bindings = [{ name = "overrides", ty = "&WorldgenOverrides", value = "overrides" }]
+
+[[module]]
+id = "world-selection-compat"
+file = "crates/horizon-world/src/worldgen/overrides.rs"
+name = "tectonic_selection"
+visibility = "pub"
+source = "selection.rs"

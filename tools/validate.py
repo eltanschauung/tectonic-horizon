@@ -32,7 +32,7 @@ def main():
                 '[[bin]]\nname="tectonic-worldgen-probe"\npath="probe.rs"\n')
     (probe / "Cargo.toml").write_text(manifest)
     shutil.copy2(ROOT / "tools/probe.rs", probe / "probe.rs")
-    command = [cargo, "run", "--manifest-path", probe / "Cargo.toml", "--target-dir", ROOT / "target/horizon-cargo", "--profile", "release", "-j", "2"]
+    command = [cargo, "run", "--manifest-path", probe / "Cargo.toml", "--target-dir", Path(env["CARGO_TARGET_DIR"]), "--profile", "dev", "-j", "2"]
     config = ROOT / "target/test-home/config.json"
     config.parent.mkdir(parents=True, exist_ok=True)
     results = {}

@@ -2,6 +2,9 @@ fn height(
     overrides: &WorldgenOverrides,
     level: &str,
 ) -> std::ops::ControlFlow<Option<LevelHeight>> {
+    #[allow(unused_imports)]
+    use tectonic_selection::TectonicWorldSelection as _;
+
     let config = tectonic_horizon::config();
     if overrides.mod_enabled("tectonic_horizon") && config.general.mod_enabled
         && config.global_terrain.increased_height

@@ -25,7 +25,7 @@ def environment(horizon):
         env, cargo = module.build_environment()
     else:
         env, cargo = os.environ.copy(), "cargo"
-    env.pop("CARGO_TARGET_DIR", None)
+    env.setdefault("CARGO_TARGET_DIR", str(ROOT / "target/horizon-cargo"))
     env["TECTONIC_HORIZON_CONFIG"] = str(ROOT / "target/test-home/config.json")
     env["HORIZON_HOME"] = str(ROOT / "target/test-home/horizon")
     env["XDG_DATA_HOME"] = str(ROOT / "target/test-home/data")
@@ -37,6 +37,9 @@ def stage(horizon, env, cargo):
     compat = json.loads((ROOT / "compatibility.json").read_text())
     original = ROOT / "target/original"
     pin = compat["horizon_revision"]
+    if original.exists() and (original / ".horizon-revision").read_text().strip() != pin:
+        import shutil
+        shutil.rmtree(original)
     if not original.exists():
         original.mkdir(parents=True)
         process = subprocess.Popen(["git", "-C", str(horizon), "archive", pin], stdout=subprocess.PIPE)
@@ -63,7 +66,7 @@ def stage(horizon, env, cargo):
     if revision != compat["horizon_mixins_revision"]:
         raise RuntimeError("mixin engine revision mismatch")
     run([cargo, "build", "--locked", "--manifest-path", mixins / "Cargo.toml", "-p", "horizon-mixins-cli"], env=env)
-    cli = mixins / "target/debug/horizon-mixins"
+    cli = Path(env["CARGO_TARGET_DIR"]) / "debug/horizon-mixins"
     common = ["--workspace", original, "--mods", ROOT / "mixins"]
     run([cli, "plan", *common, "--out", ROOT / "target/plan.json"], env=env)
     run([cli, "apply", *common, "--out", ROOT / "target/modded"], env=env)
@@ -85,7 +88,7 @@ def main():
     output = stage(args.horizon.resolve(), env, cargo)
     if args.action == "stage":
         return
-    target = ROOT / "target/horizon-cargo"
+    target = Path(env["CARGO_TARGET_DIR"])
     command = [cargo, args.action, "--locked", "--manifest-path", output / "Cargo.toml",
                "--target-dir", target, "-j", args.jobs, "-p", "horizon-client", "--bin", "horizon-client"]
     if args.action == "build":
