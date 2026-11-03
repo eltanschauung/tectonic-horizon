@@ -1,6 +1,6 @@
 [mod]
 id = "tectonic_horizon"
-version = "0.3.1"
+version = "0.3.2"
 priority = 100
 
 [compatibility]
@@ -110,3 +110,30 @@ file = "crates/horizon-world/src/worldgen/overrides.rs"
 name = "tectonic_selection"
 visibility = "pub"
 source = "selection.rs"
+
+[[module]]
+id = "config-menu"
+file = "crates/horizon-world/src/worldgen/overrides.rs"
+name = "tectonic_config_menu"
+visibility = "pub"
+source = "config_menu.rs"
+
+[[injection]]
+id = "settings"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_settings"
+helper = "settings.rs"
+bindings = [
+  { name = "mod_id", ty = "&str", value = "mod_id" },
+  { name = "buttons", ty = "&mut Vec<String>", value = "&mut *buttons" },
+]
+
+[[injection]]
+id = "settings-click"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_settings_click"
+helper = "settings_click.rs"
+bindings = [
+  { name = "mod_id", ty = "&str", value = "mod_id" },
+  { name = "button", ty = "usize", value = "button" },
+]

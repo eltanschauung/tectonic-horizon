@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "tectonic_horizon",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "game": "26.3",
   "horizon": "0409f619a6a5529c7278306a49476eafb3913e8a",
   "mixins": "ddd9700b21997c95d95ac6ee5ecafe3830cf622a"

@@ -26,7 +26,7 @@ homes. No accounts, saves or worlds are opened by validation.
 
 Install from this repository through the launcher's GitHub mod installer, then
 build the instance's native mods. The source-only `.hnmod` is also generated in
-`target/tectonic_horizon-0.3.1.hnmod` for distribution.
+`target/tectonic_horizon-0.3.2.hnmod` for distribution.
 
 ```sh
 horizon-launcher mods add-github https://github.com/eltanschauung/tectonic-horizon \
@@ -51,7 +51,7 @@ section for `tectonic_horizon`. GitHub installs have their own list rather than
 the registry's Installed list. If it was installed from the command line while
 the launcher was open, restart the launcher to refresh that list.
 
-In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.3.1**.
+In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.3.2**.
 Restart an already running game to use the new executable.
 
 ## Configuration
@@ -61,6 +61,8 @@ Defaults reproduce the settings of Tectonic 3.0.1. Optional configuration is
 `--dir` for a dedicated server). `TECTONIC_HORIZON_CONFIG` overrides that path.
 Copy [config.example.json](../config.example.json) there and edit it, or specify
 only the fields you want; omitted sections/fields keep their defaults.
+The Mods-menu Settings page exposes all six configuration sections, with toggles, numeric decrement/increment controls, selectable adjustment steps and section resets. It writes this same JSON file atomically. Invalid or unreadable configurations are shown as an error and are not overwritten.
+
 Configuration is read once per process. Restart the game after editing it.
 Malformed configurations fail before terrain generation instead of generating
 a world with unexpected settings. There is no Java config-screen dependency.
