@@ -18,7 +18,7 @@ Configuration: `config/tectonic-horizon.json` in the game home, or `TECTONIC_HOR
 
 ## Compatibility and limits
 
-Version 0.3.2 pins upstream Horizon `0409f619a6a5529c7278306a49476eafb3913e8a` and Horizon Mixins `ddd9700b21997c95d95ac6ee5ecafe3830cf622a`; [compatibility.json](compatibility.json) records source hashes. Other revisions are not covered by this release's validation.
+Version 0.3.3 pins upstream Horizon `8dbbde43501924d16497d251e6e9d08f812eafcd` and Horizon Mixins `e8cd0aa38cffef49cb2e088ef716baa107148c02`; [compatibility.json](compatibility.json) records source hashes. The height adapter includes upstream's ceiling flag; validation notes distinguish upstream checks from fork builds.
 
 The original terrain definitions and config defaults are imported with provenance in [upstream.json](upstream.json) and [third-party notices](THIRD_PARTY_NOTICES.md). This port adapts noise/density schemas and aquifers to Horizon. It does not claim block-for-block Java parity. Native river decoration uses a chunk-local random stream and differs from Lithostitched's Java feature placement. The Java config screen and Terralith/CliffTree overlays are not included. Biome packs require their own Horizon ports; our fork's BOP compatibility is separate from upstream validation. Tectonic registers no keys and does not intercept keyboard input.
 

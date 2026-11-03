@@ -1,16 +1,16 @@
 {
-  "horizon_revision": "0409f619a6a5529c7278306a49476eafb3913e8a",
+  "horizon_revision": "8dbbde43501924d16497d251e6e9d08f812eafcd",
   "horizon_repository": "https://github.com/horizon-rust/horizon",
-  "horizon_mixins_revision": "ddd9700b21997c95d95ac6ee5ecafe3830cf622a",
+  "horizon_mixins_revision": "e8cd0aa38cffef49cb2e088ef716baa107148c02",
   "mixin_schema": 6,
   "source_sha256": {
-    "crates/horizon-world/src/worldgen/overrides.rs": "fee9bb6def5bb9b4114c5845e7eb24f4e0a94b12bc3842a2d3ecef5b62a50715",
+    "crates/horizon-world/src/worldgen/overrides.rs": "ae335c47349699de7b20ccd67d01eef913127e248db2aea5a28f382289b16276",
     "crates/horizon-core/src/random/hash.rs": "0f88a127a1ba2705d3d6c0ebd009324d6ba86ffa2d27edf2d2a84765e690e4a3",
     "crates/horizon-world/src/worldgen/biome_temperature.rs": "043b2cab0772cfb74c1d7058147da73d16ce218d687acf873cae55a67bbc4cfd",
-    "crates/horizon-world/src/worldgen/structure/legacy.rs": "d87d710d6300fbed027ac0a2b452f4a49d10ea2f8418579b037c2052e9c4eb03",
-    "crates/horizon-world/src/worldgen/generator.rs": "575b90ba55fe93c69d231d3ba0382f9f565b47d6895420fcd061804ca843ebeb",
-    "crates/horizon-world/src/worldgen/generator_decoration.rs": "ec821887501e531ee9764f5746cfe524daa2543aedd494f8980e55c2811320e9",
-    "crates/horizon-client/src/game/native_hooks.rs": "e1125764298ad5ff0d5dfe912e76bb22bc0fd020364040593f75662d25061a2e",
-    "crates/horizon-client/src/vanillagen.rs": "32fdc916f9fe1b0a70cc90aff6fa96a806579702a3b2421c12b65bea495a9bb1"
+    "crates/horizon-world/src/worldgen/structure/legacy.rs": "2dc890a6914baede33026ac1d00472da907dab5e00be1a73182c6517825f25ed",
+    "crates/horizon-world/src/worldgen/generator.rs": "4046024fb2f910b1fe1dc8054d2ef5b9e93afa6a2d81aeba26258c0cccce64fb",
+    "crates/horizon-world/src/worldgen/generator_decoration.rs": "73d849a2a564270c8a7854e4fc3d3a09265fc5c4d3fd7960e2c798733e2dd89d",
+    "crates/horizon-client/src/game/native_hooks.rs": "aa0e93849c5284a912b49e0b58783f8f6ac4991d7411e2747517d7c3011b80fe",
+    "crates/horizon-client/src/vanillagen.rs": "0f3630c43997dce771485addcd9c5a5e390998a8532edd8595139423ed578790"
   }
 }

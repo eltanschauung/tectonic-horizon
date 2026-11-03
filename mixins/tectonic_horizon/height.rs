@@ -19,6 +19,7 @@ fn height(
             height: 704,
             logical_height: 704,
             has_skylight: true,
+            has_ceiling: false,
         }));
     }
     std::ops::ControlFlow::Continue(())

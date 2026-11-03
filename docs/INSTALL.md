@@ -26,7 +26,7 @@ homes. No accounts, saves or worlds are opened by validation.
 
 Install from this repository through the launcher's GitHub mod installer, then
 build the instance's native mods. The source-only `.hnmod` is also generated in
-`target/tectonic_horizon-0.3.2.hnmod` for distribution.
+`target/tectonic_horizon-0.3.3.hnmod` for distribution.
 
 ```sh
 horizon-launcher mods add-github https://github.com/eltanschauung/tectonic-horizon \
@@ -51,7 +51,7 @@ section for `tectonic_horizon`. GitHub installs have their own list rather than
 the registry's Installed list. If it was installed from the command line while
 the launcher was open, restart the launcher to refresh that list.
 
-In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.3.2**.
+In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.3.3**.
 Restart an already running game to use the new executable.
 
 ## Configuration

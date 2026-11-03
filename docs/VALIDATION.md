@@ -1,6 +1,18 @@
+# Release 0.3.3 compatibility update (2026-11-03)
+
+Targets upstream Horizon `8dbbde43501924d16497d251e6e9d08f812eafcd` and Horizon Mixins `e8cd0aa38cffef49cb2e088ef716baa107148c02`. Current upstream source hashes are in `compatibility.json`. The Overworld height adapter now explicitly sets `has_ceiling: false`.
+
+- Six Rust unit tests and the menu-registration integration test pass.
+- The source-only package is reproducible; SHA-256: `3a1d5eb8a60e2aad9b3feba0c8a7076a3b38b282c025ecbdfc82dab2ecad53c6`.
+- The full selected-mod client built and installed on Horizon fork `54f25c911c8a876bae0f90b27f8e28cb12eaaedf`, including BOP and Tectonic (`native-54f25c9-c9cdf9cb2cdd`).
+
+This pass verifies compilation with the fork's installed mod set. The isolated upstream world-generation and keyboard smoke checks below were not repeated for 0.3.3; their results apply to the revisions recorded there.
+
+---
+
 # Release 0.3.1 validation (2026-11-02)
 
-Built the native source bundle against an isolated export of **upstream** Horizon `0409f619a6a5529c7278306a49476eafb3913e8a`, using Horizon Mixins `ddd9700b21997c95d95ac6ee5ecafe3830cf622a`. No changes from our Horizon fork were applied. The source hashes are in `compatibility.json`.
+Built the native source bundle against an isolated export of **upstream** Horizon `0409f619a6a5529c7278306a49476eafb3913e8a`, using Horizon Mixins `ddd9700b21997c95d95ac6ee5ecafe3830cf622a`. No changes from our Horizon fork were applied. That historical release recorded its pinned source hashes in its `compatibility.json`.
 
 - Mixin application succeeded: eight injections, four modules and one data bundle.
 - The optimized `fast` game client and `horizon-ctl` compiled successfully with the upstream lockfile.
