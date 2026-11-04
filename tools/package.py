@@ -23,9 +23,6 @@ def main():
     for file in sorted(bundle.iterdir()):
         if file.is_file() and file.suffix in (".rs", ".toml"):
             files[file.relative_to(ROOT).as_posix()] = file.read_bytes()
-    for file in sorted((bundle / "data").glob("*")):
-        if file.is_file():
-            files[file.relative_to(ROOT).as_posix()] = file.read_bytes()
     output = ROOT / "target" / f'{manifest["id"]}-{manifest["version"]}.hnmod'
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:

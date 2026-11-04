@@ -19,7 +19,10 @@ fn menu_registration_lists_the_mod_once_and_preserves_other_mods() {
     assert_eq!(mods.len(), 2);
     assert_eq!(mods[0].id, "other_mod");
     assert_eq!(mods[1].id, "tectonic_horizon");
-    assert_eq!(mods[1].title, format!("Tectonic-Horizon {}", env!("CARGO_PKG_VERSION")));
+    assert_eq!(
+        mods[1].title,
+        format!("Tectonic-Horizon {}", env!("CARGO_PKG_VERSION"))
+    );
     assert!(mods[1].description.contains("Settings page"));
     assert!(mods[1].keys.is_empty());
 }

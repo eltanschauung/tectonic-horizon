@@ -14,14 +14,14 @@ Install the native mod through Horizon's launcher, then Build. Enable it under O
 
 Open **Options > Mods > Tectonic-Horizon > Settings** to edit General, Global terrain, Continents, Islands, Oceans and Biomes. Boolean buttons toggle; numeric (-)/(+) buttons use the selected adjustment step (0.001, 0.01, 0.1, 1, 10 or 100; integer fields use at least 1). Each section has its own reset button. Edits save immediately to the same JSON configuration and preserve values in the other sections. Restart the game before playing with the new settings. The editor does not change a running world generator.
 
-Configuration: `config/tectonic-horizon.json` in the game home, or `TECTONIC_HORIZON_CONFIG`. See [the example](config.example.json) and [installation notes](docs/INSTALL.md). Missing fields use defaults; restart after edits. Changes affect newly generated chunks. Increased-height terrain must be selected before creating a world.
+Configuration: `config/tectonic-horizon.json` in the game home, or `TECTONIC_HORIZON_CONFIG`. See [the example](config.example.json) and [installation notes](docs/INSTALL.md). Missing fields use defaults; invalid, unreadable or oversized configuration logs a diagnostic and uses defaults. Restart after edits. Changes affect newly generated chunks. Increased-height terrain must be selected before creating a world.
 
 ## Compatibility and limits
 
-Version 0.3.3 pins upstream Horizon `8dbbde43501924d16497d251e6e9d08f812eafcd` and Horizon Mixins `e8cd0aa38cffef49cb2e088ef716baa107148c02`; [compatibility.json](compatibility.json) records source hashes. The height adapter includes upstream's ceiling flag; validation notes distinguish upstream checks from fork builds.
+Version 0.3.4 pins upstream Horizon `8dbbde43501924d16497d251e6e9d08f812eafcd` and Horizon Mixins `e8cd0aa38cffef49cb2e088ef716baa107148c02`; [compatibility.json](compatibility.json) records source hashes. The height adapter includes upstream's ceiling flag; validation notes distinguish upstream checks from fork builds.
 
 The original terrain definitions and config defaults are imported with provenance in [upstream.json](upstream.json) and [third-party notices](THIRD_PARTY_NOTICES.md). This port adapts noise/density schemas and aquifers to Horizon. It does not claim block-for-block Java parity. Native river decoration uses a chunk-local random stream and differs from Lithostitched's Java feature placement. The Java config screen and Terralith/CliffTree overlays are not included. Biome packs require their own Horizon ports; our fork's BOP compatibility is separate from upstream validation. Tectonic registers no keys and does not intercept keyboard input.
 
-See [validation](docs/VALIDATION.md) for the release's checks and their scope. The public source and packaged mixins are identical; `python3 tools/package.py` reproduces the source-only `.hnmod`.
+See [0.3.4 review validation](docs/REVIEW-0.3.4.md) and [earlier validation](docs/VALIDATION.md) for the release's checks and their scope. The public source and packaged mixins are identical; `python3 tools/package.py` reproduces the source-only `.hnmod`.
 
 License: [CC0-1.0](LICENSE). Original Tectonic by Apollo; Horizon adaptation by eltanschauung with Codex assistance.

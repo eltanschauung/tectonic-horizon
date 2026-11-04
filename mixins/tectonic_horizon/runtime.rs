@@ -147,15 +147,37 @@ pub fn active() -> bool {
     ACTIVE.load(std::sync::atomic::Ordering::Relaxed)
 }
 
+pub fn load_config(path: &std::path::Path) -> Config {
+    use std::io::Read;
+    let read = || -> Result<Config, String> {
+        let file = match std::fs::File::open(path) {
+            Ok(file) => file,
+            Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
+                return Ok(Config::default());
+            }
+            Err(error) => return Err(format!("cannot read configuration: {error}")),
+        };
+        let mut text = String::new();
+        file.take(65537)
+            .read_to_string(&mut text)
+            .map_err(|error| format!("cannot read configuration: {error}"))?;
+        if text.len() > 65536 {
+            return Err("configuration exceeds 64 KiB".into());
+        }
+        Config::from_json(&text)
+    };
+    read().unwrap_or_else(|error| {
+        eprintln!(
+            "[Tectonic-Horizon] {}: {error}; using defaults",
+            path.display()
+        );
+        Config::default()
+    })
+}
+
 pub fn config() -> &'static Config {
     static CONFIG: OnceLock<Config> = OnceLock::new();
-    CONFIG.get_or_init(|| match std::fs::read_to_string(config_path()) {
-        Ok(text) if text.len() <= 65536 => Config::from_json(&text)
-            .unwrap_or_else(|e| panic!("[Tectonic-Horizon] invalid configuration: {e}")),
-        Ok(_) => panic!("[Tectonic-Horizon] configuration exceeds 64 KiB"),
-        Err(e) if e.kind() == std::io::ErrorKind::NotFound => Config::default(),
-        Err(e) => panic!("[Tectonic-Horizon] cannot read configuration: {e}"),
-    })
+    CONFIG.get_or_init(|| load_config(&config_path()))
 }
 
 // Translate 1.21 density operations into Horizon's 26.3 density schema.
