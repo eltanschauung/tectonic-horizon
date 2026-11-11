@@ -398,6 +398,10 @@ pub fn populate(bundle: &str, base: &mut BTreeMap<String, String>, config: &Conf
         ] {
             settings["noise_router"][key] = port["noise_router"][key].clone();
         }
+        settings["noise_router"]["final_density"] = json!({
+            "type":"minecraft:add", "left":{"type":"minecraft:beardifier"},
+            "right":settings["noise_router"]["final_density"].take()
+        });
         settings["noise_router"]["chunk_surface_level"] =
             json!("tectonic:preliminary_surface_level");
         for key in [
@@ -482,6 +486,23 @@ pub fn populate(bundle: &str, base: &mut BTreeMap<String, String>, config: &Conf
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn surface_structures_reach_the_final_density_graph() {
+        let mut settings = BTreeMap::from([(
+            "minecraft:overworld".into(),
+            entries("settings", &Config::default())["minecraft:overworld"].to_string(),
+        )]);
+        populate("settings", &mut settings, &Config::default());
+        let v: Value = serde_json::from_str(&settings["minecraft:overworld"]).unwrap();
+        let density = &v["noise_router"]["final_density"];
+        assert_eq!(density["type"], "minecraft:add");
+        assert_eq!(density["left"]["type"], "minecraft:beardifier");
+        assert!(!density["right"].is_null());
+        assert_eq!(
+            density.to_string().matches("minecraft:beardifier").count(),
+            1
+        );
+    }
     #[test]
     fn constants_keep_original_signs_and_defaults() {
         let config = Config::default();

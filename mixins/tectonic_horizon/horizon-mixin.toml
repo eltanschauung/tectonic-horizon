@@ -1,6 +1,6 @@
 [mod]
 id = "tectonic_horizon"
-version = "0.3.4"
+version = "0.3.5"
 priority = 100
 
 [compatibility]

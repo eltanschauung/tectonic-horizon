@@ -26,7 +26,7 @@ homes. No accounts, saves or worlds are opened by validation.
 
 Install from this repository through the launcher's GitHub mod installer, then
 build the instance's native mods. The source-only `.hnmod` is also generated in
-`target/tectonic_horizon-0.3.3.hnmod` for distribution.
+`target/tectonic_horizon-0.3.5.hnmod` for distribution.
 
 ```sh
 horizon-launcher mods add-github https://github.com/eltanschauung/tectonic-horizon \
@@ -51,7 +51,7 @@ section for `tectonic_horizon`. GitHub installs have their own list rather than
 the registry's Installed list. If it was installed from the command line while
 the launcher was open, restart the launcher to refresh that list.
 
-In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.3.3**.
+In the newly built game, **Options → Mods** lists **Tectonic-Horizon 0.3.5**.
 Restart an already running game to use the new executable.
 
 ## Configuration
@@ -82,3 +82,7 @@ River decoration uses native deterministic, chunk-local placement of glow lichen
 and rare hanging lanterns. It samples Tectonic's river eligibility density and
 lantern noise, and does not depend on Lithostitched. Its placement order and
 random stream differ from Lithostitched's Java feature pipeline.
+
+Version 0.3.5 restores the host beardifier field in final density. The fork
+provides deterministic surface fitting and per-structure datapack limits; see
+[the surface structure guide](https://github.com/eltanschauung/horizon/blob/main/docs/surface-structures.md).
